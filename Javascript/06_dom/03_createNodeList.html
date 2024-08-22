@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create NodeList</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div)
+    div.className = "first-div"
+    div.id = Math.round(Math.random() * 10 + 1)      //+1->not to get 0
+    div.setAttribute("title", "title1")              //(key, value) pair
+    //till now this div is in memory(not on pg) now attach it
+
+    div.style.backgroundColor = "Red";
+    <!-- div.innerText = "Create NodeList" -->
+    
+    const addText = document.createTextNode("Create NodeList")    //More optimize(create textnode) 
+    div.appendChild(addText)        //Attach
+
+    document.body.appendChild(div)   //Attach to doc
+</script>
+</html>
