@@ -1,0 +1,46 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    background-color:rgb(56, 53, 56);
+    text-align: center;
+    color: white;
+    /* line-height: 30px; */
+    /* font-family: Verdana,sans-serif; */
+}
+.navbar {
+    padding: 20px 20px;
+    margin: 25px ;
+    background-color: rgb(139, 170, 170);
+    color: white;
+    border-radius: 10px;
+}
+.link{
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+#home {
+    background-color: rgb(120, 10, 10);
+    margin-right: 50px;
+}
+#signIn{
+    background-color: rgb(20, 8, 243);
+}
+.container {
+    padding: 40px;
+}
+input,button {
+    color: black;
+    background-color: white;
+    border: none;
+}
+label {
+    margin-right: 20px;
+}
+button {
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px;
+}
+#BMI-result {
+    color: aqua;
+}
