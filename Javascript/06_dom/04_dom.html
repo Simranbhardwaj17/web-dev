@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit & Remove elements in DOM</title>
+</head>
+<body style="background-color: black; color:aliceblue">
+    <ul class = "language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //this method is not optimize for large codebase coz of tree traverse from top to bottom every t to append a ele
+    function addLang(lang) {
+        const li = document.createElement('li')  //create li
+        li.innerHTML = `${lang}` //add innerHTML
+        document.querySelector('.language').appendChild(li) //Attach to doc selecting parent using appendChild
+    }
+    addLang('Java')
+    addLang('Cpp')
+
+    //optimized: No need to traverse the tree(coz of createTextNode)
+    //"append" is far better than "innerHTML"
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }    
+</script>
+</html>
