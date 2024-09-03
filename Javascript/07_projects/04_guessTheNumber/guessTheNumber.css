@@ -1,0 +1,58 @@
+* {
+    text-align: center;
+    background-color: #060000;
+    color: aliceblue;
+}
+h1 {
+    background-color: #9b0a0a;
+    margin: 50px;
+    padding: 20px;
+}
+h2 {
+    margin-top: 40px;
+    font-size: 40px;
+    margin-bottom: 0;
+    color: #fa18c9;
+}
+input {
+    background-color: rgb(250, 248, 244);
+    color: black;
+    padding: 8px;
+}
+button {
+    background-color: rgb(11, 37, 238);
+    /* display: block; */
+    border-radius: 20px;
+    border: none;
+    padding: 9px 15px;
+    margin: 15px;
+}
+.guess-left {
+    color: rgb(4, 246, 4);
+}
+.prev-guess {
+    color: #ecf00b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .link{
+    padding: 10px 20px;
+    margin: 25px ;
+    border-radius: 30px;
+    display: list-item;
+}
+background-color: rgb(139, 170, 170);
+background-color: rgb(100, 97, 131); */
