@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+    color: white;
+    background-color: rgb(6, 43, 43);
+}
+h1 {
+    background-color: rgb(23, 23, 28);
+    padding: 10px;
+    margin-bottom: 190px;
+}
+p {
+    color: rgb(139, 177, 177);
+    font: 17px sans-serif;
+    margin-top: 6px;
+}
+/* .display {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+.display {
+    /* padding: 20px; */
+    font-size: 35px;
+    /* height: 30px;
+    width: 40px; */
+    /* border-radius: 20px; */
+    /* background-color: brown; */
+}
