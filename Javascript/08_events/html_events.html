@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Gallery- Images</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <!-- <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')"></li>
+                    Not good way(1st:-  to inject event in HTML) coz of problem at time of scaling of the app 
+                    In react, its different coz of its library-->
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google" target="_blank">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // In JS events run sequentially, some r exceptions that we learn today.Sometimes we ignore seq
+    // As in asynchronous we deviate some synchro then get same
+    // Events invoke on activity(not seq) like click mouse,keyB, drag & drop 
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    //2nd approach:- Add onclick Event
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    }
+    //Not good coz of might be problem in onclick event when u apply it on id
+    //u can't get enough info so, use eventListener
+
+     //onclick Event gives less feature compare to eventListener 
+
+    //3rd approach:- Add eventListener 
+    //coz it not only provide onclick functionality but also ability of propagation
+    //Try to learn abt eventListener
+</script>
+</html>
