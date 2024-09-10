@@ -26,14 +26,8 @@
     // As in asynchronous we deviate some synchro then get same
     // Events invoke on activity(not seq) like click mouse,keyB, drag & drop 
 
-    // attachEvent()
-    // jQuery - on
-
-    // type, timestamp, defaultPrevented
-    // target, toElement, srcElement, currentTarget,
-    // clientX, clientY, screenX, screenY
-    // altkey, ctrlkey, shiftkey, keyCode
-
+    
+    
     //2nd approach:- Add onclick Event
     document.getElementById('owl').onclick = function(){
         alert("owl clicked")
@@ -46,5 +40,42 @@
     //3rd approach:- Add eventListener 
     //coz it not only provide onclick functionality but also ability of propagation
     //Try to learn abt eventListener
+    //addeventListener takes 3 parameter ('eventToListen', function(){}, false)         3rd param(false) is default.So no need to wi8.    
+    //But why it is & its usecase   ???
+    //Sometime some code/app given in interview that can't completed without using T/F
+    document.getElementById('owl').addEventListener('click', function(){
+        alert('owl again clicked')
+    })
+    // attachEvent() - use at time of Internet Explorer
+    // In jQuery framework - on  replace add
+
+    document.getElementById('owl').addEventListener('click', function(e){            //To work on event use eventObject "e"
+    console.log(e)
+    }, false)           //using F/T, no effect on Browser Event
+
+    //+++++++++  Events r :
+    //Browser Event         
+    //          & 
+    //Environment:- mouse click, its position at that time ?view ,ht & width of window, timestamp
+    
+    //In interview u r asked :(Using these) make app, when user click(body or img ...) get the timestamp. No need to use react, use Js(1 line code)
+
+    //+++++++   Events to learn:
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode  :  using it make proj like keyboard speed of a user 
+
+
+    //+++++++    Event Propagation :: Its 2 context r :-
+    //Event Bubbling
+    //Event capturing
+    //Mainly use false as def cld as Event Bubbling. Sometime also need to use Event capturing
+
+    //JavaScript uses Event Propagation to handle how events travel through the Document Object Model (DOM) when an event 
+    //occurs and reaches the target element, triggering further actions based on the event. 
+    //It happens in three phases   -   Capturing, Targeting and Bubbling           ///////////////
+
+    //learn how Event Propagation occur & how to stop it
 </script>
 </html>
