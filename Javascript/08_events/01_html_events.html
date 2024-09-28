@@ -1,0 +1,164 @@
+<!-- L-36 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Gallery- Images</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <!-- <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')"></li>
+                    Not good way(1st:-  to inject event in HTML) coz of problem at time of scaling of the app 
+                    In react, its different coz of its library-->
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google" target="_blank">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // In JS events run sequentially, some r exceptions that we learn today.Sometimes we ignore seq
+    // As in asynchronous we deviate some synchro then get same
+    // Events invoke on activity(not seq) like click mouse,keyB, drag & drop 
+
+    
+    
+    //2nd approach:- Add onclick Event
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    }
+    //Not good coz of might be problem in onclick event when u apply it on id
+    //u can't get enough info so, use eventListener
+
+     //onclick Event gives less feature compare to eventListener 
+
+    //3rd approach:- Add eventListener 
+    //coz it not only provide onclick functionality but also ability of propagation
+    //Try to learn abt eventListener
+    //addeventListener takes 3 parameter ('eventToListen', function(){}, false)         3rd param(false) is default.So no need to wi8.    
+    //But why it is & its usecase   ???
+    //Sometime some code/app given in interview that can't completed without using T/F
+    document.getElementById('owl').addEventListener('click', function(){
+        alert('owl again clicked')
+    })
+    // attachEvent() - use at time of Internet Explorer
+    // In jQuery framework - on  replace add
+
+    document.getElementById('owl').addEventListener('click', function(e){            //To work on event use eventObject "e"
+    console.log(e)
+    }, false)           //using F/T, no effect on Browser Event
+
+    //+++++++++  Events r :
+    //Browser Event         
+    //          & 
+    //Environment:- mouse click, its position at that time ?view ,ht & width of window, timestamp
+    
+    //In interview u r asked :(Using these) make app, when user click(body or img ...) get the timestamp. No need to use react, use Js(1 line code)
+
+    //+++++++   Events to learn:
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode  :  using it make proj like keyboard speed of a user 
+
+
+    //+++++++    Event Propagation :: Its 2 context/types r :-
+    //Event Bubbling
+    //Event capturing
+    //Mainly use false as def cld as Event Bubbling. Sometime also need to use Event capturing
+
+    <!--JavaScript HTML DOM EventListener  : From W3 School
+
+    There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+    //Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element,
+    //and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+     In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+        as bubble move from bottom to top(inner to outer ele)
+        use: false as 3rd parameter    
+
+    In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+        use: true for that as 3rd para
+            
+    With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+            
+    addEventListener(event, function, useCapture);
+    The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+            
+            Example
+            document.getElementById("myP").addEventListener("click", myFunction, true);
+            document.getElementById("myDiv").addEventListener("click", myFunction, true); -->
+
+    //JavaScript uses Event Propagation to handle how events travel through the Document Object Model (DOM) when an event 
+    //occurs and reaches the target element, triggering further actions based on the event. 
+    //It happens in three phases   -   Capturing, Targeting and Bubbling           ///////////////
+
+    //learn how Event Propagation occur & how to stop it
+
+
+    //Event bubbling-------------
+    document.getElementById('images').addEventListener('click', function(e){            //To work on event use eventObject "e"
+       console.log("ul clicked")                  //printed when click on img
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){            //To work on event use eventObject "e"
+       console.log("owl clicked")                  //printed when click on owl img
+    }, false)
+
+
+     //REMAINS SAME AS ABOVE (coz false is a default value)
+    document.getElementById('images').addEventListener('click', function(e){           
+       console.log("ul clicked")                  //printed when click on img
+    })
+
+    document.getElementById('owl').addEventListener('click', function(e){  
+       console.log("owl clicked")           
+    })
+
+    //coz of Event Propagation(bubbling:- down to top)      when clicked on owl, 1st owl clicked printed then ul clicked
+                                                          // (img > li > ul)
+
+      //Evennt Prop :-  Event Capturing(top to down)+++++++++++++++++++++
+    document.getElementById('images').addEventListener('click', function(e){           
+        console.log("ul clicked")                  //printed when click on img
+    }, true)
+    
+    document.getElementById('owl').addEventListener('click', function(e){  
+        console.log("owl clicked")                         //(top to down:- ul > li > img) 
+        e.stopPropagation()                                //if u want bubbling of inner ele not occur use it, here e is:- eventCapture (stopProp same as preventDefault) 
+                                                           //only print owl clicked (no bubbling occur & go to outer ele)
+    }, true)
+
+    //Use according to usecase
+
+    //defaultPrevented()+++++++++++++
+    document.getElementById('google').addEventListener('click', function(e){
+        console.log("Google clicked")
+        e.defaultPrevented()             //prevent to open link
+        e.stopPropagation()              //to stop bubbling up as id is inside of ul (id > ul)
+    }, false)
+
+    //document.querySelector('#images').addEventListener('click', function(e) {
+     //   console.log(e.target.parentNode)                 //e.tgt ref img & e.target.parentNode ref li(parent of img)
+     //   let removeIt = e.target.parentNode              //removeIt:-  li        
+     //   //removeIt.remove()                    //if click on li, ul get unvisible
+                    //or
+     //   removeIt.parentNode.removeChild(removeIt)          //here parentNode refer to ul
+    //}, false)            //by def:- F (if no wi8, then also)
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.tagName); 
+        if(e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+</script>
+</html>
