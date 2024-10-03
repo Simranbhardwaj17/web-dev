@@ -1,0 +1,24 @@
+//L-39
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIRequest</title>
+</head>
+<body background-color="212121">
+    
+</body>
+<script>
+    // <!-- XMLHttprequest() -->
+    // Method which contain readystate or by it u can send & accept data request -->
+
+    const requestUrl = 'https://api.github.com/users/hiteshchaudhary';
+    const xhr = new XMLHttpRequest();                  //create obj & store in var
+    xhr.open('GET', requestUrl);                       //good practice to use var
+    console.log("HERE");
+    xhr.send();
+</script>
+</html>
+
