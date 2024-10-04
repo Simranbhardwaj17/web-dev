@@ -1,0 +1,48 @@
+<!-- L-38 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <h1>Js tutorial</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    <!-- document.querySelector('h1').innerHTML = "hi" -->
+    const sayHlo = function() {
+        console.log("hlo")
+    }
+    setTimeout(sayHlo, 4000)          //sayHlo:- reference,  sayHlo():-execute         4000ms(4s)
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Hi"
+    }
+    const changed = setTimeout(changeText, 2000)
+
+    //usage in webste for popup ad
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changed)
+        console.log("STOPPED")
+    })
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
