@@ -74,20 +74,46 @@ const promiseFive = new Promise(function(resolve, reject) {
     setTimeout(function() {
         let error = true
         if(!true){
-            resolve({author: "Simran Bhardwaj", year: "1980"});
+            resolve({author: "Simran Bhardwaj", year: "2009"});
         }
         else{
             reject("Error 404")
         }
     }, 1000)
 })
-//async- wait for the work to be exe, then process further(can't gracefully catch the handle)
+//async- wait for the work to be exe, then process further else stop there(can't gracefully catch the handle)
+//As DB coonection not occur, no further process
+
+// // It don't resolve the error
+// async function consumePromiseFive() {
+//     const response =await promiseFive          //wait for whatever promise(resolve/ reject),    promise: a obj can't consume in this way using()
+//     console.log(response);
+// }
+// consumePromiseFive()                //if error = false, everything work fine
+
+async function consumePromiseFive() {
+    try {
+        const response = await promiseFive;
+        console.log(response);        
+    } catch (error) {
+        console.log(error);
+    }
+}
+consumePromiseFive()
+
+//u can use both async/await(using try catch to handle error)   and   .then()  .catch()
 
 
-
-
-
-
+async function getAllUsers() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')    //hold in a var
+        const data = response.json()
+        console.log(data);
+    } catch (error) {
+        console.log("E:", error);  
+    }
+}
+getAllUsers()
 
 
 
