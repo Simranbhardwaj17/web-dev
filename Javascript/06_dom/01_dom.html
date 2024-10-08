@@ -3,6 +3,8 @@ l-31
 DOM:- Document obj model (means doc:-model,structure if u can understand it u can also do manipulations using fn,reduce...)
 Doc made of obj(head, body)
 
+Do these practice of DOM in console
+
 Event:- What happen to click a button (like:request on web server)
  -->
 
@@ -19,6 +21,39 @@ Event:- What happen to click a button (like:request on web server)
     </div>
 </body>
 </html>
+
+console.log(window)
+console.log(window.document)
+console.log(document) 
+console.dir(document)        //to get all as window's doc
+
+            window
+              |
+            Document
+              |
+             HTML
+   |                    |
+   head               body
+  |    |                 |
+title  <meta>           div --attribute
+  |       |            |   |    
+text node  attribute   h1  p
+                       |
+                 text node+attribute
+// In DOM everything is a node(as text value in title tag)
+  
+  
+
+console.log(document)
+console.log(document.baseURI)        //It give url of webpg
+console.log(document.links)        //It give HTML collection (HTML collection, NodeCollection r converted to array to apply map,forEach... as these prop not available to these)
+
+
+document.getElementById('...')
+document.getElementById('...').innerHTML = "<h1>JS</h1>"      //h1 of that Id will be replaced by JS
+
+
+
 
 
 <!--
