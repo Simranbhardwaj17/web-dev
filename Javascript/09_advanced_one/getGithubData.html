@@ -1,0 +1,38 @@
+<!-- Problem:- From given url fetch the profile image & followers of the user & display on webpage -->
+<!-- Solution:-      -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET GITHUB DATA</title>
+</head>               
+<body>
+    <script>
+    const requestUrl = 'https://api.github.com/users/hiteshchaudhary';
+    const xhr = new XMLHttpRequest();                       //create obj & store in var
+    xhr.open('GET', requestUrl);                            //good practice to use var
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4) {                          //exe the body if readyState === 4(last state that means done)
+            const data = JSON.parse(this.responseText)      //to convert string to obj ,   this-> for current context
+           
+            const div = document.createElement('div')       // Create a div 
+            
+            const img = document.createElement('img')       // Create an image element
+            img.src = data.avatar_url                       // Set the source of the image
+            img.alt = "User profile"                        // Optionally, set other attributes like alt text
+            
+            const followers = document.createTextNode(`Followers are: ${data.followers}`)     // Create a text node
+            
+            div.appendChild(img)
+            div.appendChild(followers)
+            document.body.appendChild(div)                  // Append the div to the document body(attach to html file)
+        }
+    }
+    xhr.send();
+    </script>
+</body>
+</html>
+
+
