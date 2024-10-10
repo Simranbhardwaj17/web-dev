@@ -107,7 +107,7 @@ consumePromiseFive()
 async function getAllUsers() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users')    //hold in a var
-        const data = response.json()
+        const data = await response.json()      //it takes time so use await
         console.log(data);
     } catch (error) {
         console.log("E:", error);  
@@ -116,9 +116,35 @@ async function getAllUsers() {
 getAllUsers()
 
 
+//Above(in try catch format) func in format of .then() & .catch()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {      //for response type ,  response:-name of var
+    return response.json()
+})  
+//to handle above ret response.json(): send as data
+.then((data) => {           //value received that is send by above then
+    console.log(data);
+})                      
+.catch((error) => console.log(error))  //if fail
+
+//here no need of try catch coz 1 .then() exe after other
+
+
+
+// fetch('https://api.github.com/users/hiteshchaudhary')
+// .then((response) => {      //for response type ,  response:-name of var
+//     return response.json()
+// })  
+// //to handle above ret response.json(): send as data
+// .then((data) => {           //value received that is send by above then
+//     console.log(data);
+// })                      
+// .catch((error) => console.log(error))
 
 
 
 
 
 
+//Why async code run at last?
