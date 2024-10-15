@@ -1,3 +1,10 @@
+//L-33
+
+//In interview, knowledge of DOM will be helpful to code instant 
+//see relations parent-child, child-child, child-parent ,these all will be helpful in adding ele to doc, creating ele
+//Query from DB, store into arr, then to display on webpg into buttons or cards depends upon u
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +16,24 @@
     
 </body>
 <script>
+                //create Element
     const div = document.createElement('div')
     console.log(div)
     div.className = "first-div"
     div.id = Math.round(Math.random() * 10 + 1)      //+1->not to get 0
-    div.setAttribute("title", "title1")              //(key, value) pair
-    //till now this div is in memory(not on pg) now attach it
+    //setAttribute:- it is more preffered coz it not overwi8 the vaslue like .classame,.innerText
+    //It directly set the value not like 1st take the value reference then overwi8
+    div.setAttribute("title", "title1")              //(key, value) pair     setAttribute:-use for other than class,div 
 
     div.style.backgroundColor = "Red";
-    <!-- div.innerText = "Create NodeList" -->
+    div.style.padding = "15px";
+
+    //till now this div is in memory(not on pg) now attach it
     
-    const addText = document.createTextNode("Create NodeList")    //More optimize(create textnode) 
-    div.appendChild(addText)        //Attach
+    <!-- div.innerText = "Create NodeList" -->            //Not going to innerText
+    
+    const addText = document.createTextNode("Create NodeList")    //More optimize(create textnode by own) 
+    div.appendChild(addText)        //Attach node to div
 
     document.body.appendChild(div)   //Attach to doc
 </script>
