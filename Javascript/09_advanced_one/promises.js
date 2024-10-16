@@ -148,3 +148,13 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 
 //Why async code run at last?
+
+// fetch syntax
+//Fetch API takes a URL & produces a promise that resolves to the response
+fetch("https://example.com/api/endpoint")
+.then((response) => {
+    //Do something with response
+})
+.catch(function (err) {
+    console.log("Unable to fetch-" , err); 
+});
