@@ -1,3 +1,4 @@
+//l-33
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,24 +18,31 @@
     //traversing parent to child , child to parent
     //parent to child
    /* const parent = document.querySelector('.parent')
-    console.log(parent);
-    console.log(parent.children);
-    console.log(parent.children[0].innerHTML);
+    console.log(parent);                     //to select parent class & print its ele
+    console.log(parent.children);            //give HTMLCollection
+    console.log(parent.children[0].innerHTML);  //to print content
 
-    console.log(parent.children[2].style.color = "yellow");
+    (parent.children[2].style.color = "yellow");  //change 3rd ele to yellow color on pg
     console.log(parent.firstElementChild);      //to tgt 1st ele of parent 
     console.log(parent.lastElementChild);
+                             //useful in js, when u have already tgt parent then instead of going inner use it  
+    
 
-    for (let i = 0; i < parent.children.length; i++) {
-        console.log(parent.children[i])
+    TO PRINT DATA USING classic for loop (no need to convert into arr)
+    
+    for (let i = 0; i < parent.children.length; i++) {      //coz parent.children give HTMLCollection
+        console.log(parent.children[i].innerHTML)
     } */
 
     //child to parent
-    const dayOne = document.querySelector('.day');
-    console.log(dayOne);
-    console.log(dayOne.parentElement); 
-    console.log(dayOne.nextElementSibling); 
+    const dayOne = document.querySelector('.day');         //select only 1st ele
+    console.log(dayOne);            //print 1st ele 
+    console.log(dayOne.parentElement);  //to go from child to 'parent' as child is stored in a var
+    console.log(dayOne.nextElementSibling);     //tues ele with prop added like style color-org
     console.log(dayOne.nextSibling);         //In DOM everything is node coz of tree structure as line break after monday alsu
+
+    console.log("NODES:" , parent.childNodes);         //o/p:-  NodeList[9], coz it also add linebreak as 1 then div.day
+                                        //    Also add comment break                               
 </script>
 </html>
 
