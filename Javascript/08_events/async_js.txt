@@ -1,0 +1,20 @@
+//L- 37
+JS:
+    synchronous:- line by line code exe , exception when add something extra
+    Single threaded:- slow compare to multithreaded, js engine is avail in runtime enironment(of browser & nodejs) 
+
+we get access of file system in nodejs(not in browser)
+
+
+Blocking code           vs             Non blocking code
+      |                                      |
+block the flow of program           don't block the flow of program
+      |                                      |
+read file sync                         read file async    (parallel run)
+
+on basis of usecase any1 is use
+
+JS engine- meomry heap , call stack - only these do exe
+Execution environment-  browser, nodejs, dino
+Web API - is in browser & if Web API is avail,we get DOM API 
+
