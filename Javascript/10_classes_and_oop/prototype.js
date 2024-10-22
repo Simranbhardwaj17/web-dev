@@ -17,13 +17,12 @@ newH     // (after click on it u will see prototype)
 
 
 
+//In JS, everything is object
 
+// Array is a obj & parent of obj is null. So prototype reference is nll
+// Array  ----->  object    --------> null
+// String ___________|
+// function 
 
-
-
-
-
-
-
-
-
+//for that go to file object.js
+//property of obj is avail to both arr & string
