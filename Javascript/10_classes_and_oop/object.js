@@ -11,6 +11,7 @@ multiplyBy5.power = 2      //(We use . with obj. Is it means func is a obj )
 console.log(multiplyBy5(5));
 console.log(multiplyBy5.power);
 console.log(multiplyBy5.prototype);       //o/p:-  {}
+//prototype not only give methods but also give some internal property
 
 
 // In js everything is obj , func is func & obj too
@@ -23,15 +24,25 @@ console.log(multiplyBy5.prototype);       //o/p:-  {}
 
 
 function createUser(username, score) {
-    this.username = username         
+    this.username = username 
+    this.score = score        
+}
+
+createUser.prototype.increment = function(){
+    this.score++
 }
 
 
+createUser.prototype.printMe = function(){
+    console.log(`Score is ${this.score}`);
+}
 
 
+const book = createUser("book", 30)
+const notebook = createUser("notebook", 60)
 
 
-
+myArray.prototype.map()
 
 
 
