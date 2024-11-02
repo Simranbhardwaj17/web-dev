@@ -1,0 +1,51 @@
+<!-- L-46
+D-27/10/24 -->
+
+<!-- At that time when react was launched:- 
+No abstraction on call, bind, apply method in react & all r aware how it works
+One who know Js core(under the hood) how works were learning & else where struggling -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement(getButtonReference & showClicked(like print or formSubmit ho jaye))
+            //to make virtual DOM, take refer of all
+            document                    //BTS C++ doc
+            .querySelector('button')     
+            .addEventListener('click', this.handleClick.bind(this))   //this for refer to handleclick & bind to attach all other this(var, func,..). No overwi8 done
+        }  
+         
+        handleClick(){                     //here, new refer of this is created but need to bind. So, we get refer of all existing this(can't use call, as new refer get created & get complex to know which button clicked)
+            console.log("button clicked")
+            console.log("this.server")     //to check r they accessible
+            console.log(this) //have refer but still why above line not working as in call here we get empty(means no refer tha)
+            //have refer of button(as document call it)
+        }
+
+        //after bind u can access all react library , server,... by "this" only
+        <!-- handleClick(){                     
+        console.log("button clicked")
+        console.log("this.server")     //to access only server of react
+            } -->
+
+            //problem:- In react, When create mthd & click on mthd --> & wi8 onclick prop on button but still code not run. So, use bind
+            //bind keyword ask to attach (not just manually)
+    }      
+    //as pg load obj of react(R key) get created
+    const app = new React()   //As new create, const give reference to buttons
+</script>
+</html>
