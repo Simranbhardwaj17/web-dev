@@ -1,0 +1,97 @@
+<!-- L-49
+D-30/10/24
+ -->
+
+inner func can access outer func var
+whatever declared in a func is not accessible out of func(scope) but inner func can take values from outer
+NOTE THAT:------>  inner() has no local var of its own.inner func have access to var of outer func
+NOTE THAT:------>   only child(inner) func can share var from parent func but siblings can't share their var with each other
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: black;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    
+</body>
+<script>
+
+    //Lexical Scoping:-  inner func can access outer func var
+    function outer() {
+        let username = "Simran"
+        // console.log("outer", secret);      not defined (cannot access/share inner func var)-->
+
+        function inner(){
+            console.log("inner", username);
+            let secret = "mysecret"
+        }
+
+        function inner2() {
+            console.log("inner2", username)
+            // console.log("inner2", secret);    cannot access/share inner func(each other) var       -->
+        }
+
+        inner()   
+        inner2()
+    }
+    outer()
+    console.log("Outer", username)
+
+
+
+//closure: When return a func, not just a func ret but its whole scope(called as L.S) get ret
+
+    function makeFunc(){
+        const name = "Mpzilla";
+        function displayName(){
+            console.log(name);
+        }
+        return displayName;      //here, reference passed
+        //In above code, exe & end (in line-40,41 ). So, think abt scoping
+
+        const myFunc = makeFunc();  //here, func exe & scope end  
+        myFunc();
+    }
+    //Here how L.S work as jb tk outer func tha, inner func access its var (func scope rhta h, till it exe).Her, we use CLOSURE concept
+    //Although, u remove func exe context, but role of memory refer came(In js:-->  memory store & exe single-thread)
+    
+    //Here get, mem refer role
+
+    //const myFunc = makeFunc();      //only displayName not return, if its outer func exist then thats scope also returned(coz of L.S)
+
+    //As var "name" is also related to func "displayName" .So, whole memory (L.S) will be exe(not just func exe context)
+
+    //so, now u can print name
+
+</script>
+
+<script>
+    // Practical
+
+    //document.getElementById("orange").onclick = function(){           //.onclick need a function()
+    //    document.body.style.backgroundColor = `orange`
+    //}
+
+    //document.getElementById("green").onclick = function(){           //.onclick need a function()
+    //    document.body.style.backgroundColor = `green`
+    //} 
+
+
+    //lets write generic code for lot of change
+    function colorHandler(color){            //here, colorHandler ret func "function" only but coz of L.S function have access to color var
+        //document.body.style.backgroundColor = `${color}`
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`   //have access to color var coz of L.S  
+        }
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange")   //.onclick need a function() but here method def(not a func) so directly get exe without clicking. so, change func def
+</script>
+</html>
