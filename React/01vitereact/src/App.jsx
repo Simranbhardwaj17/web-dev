@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import Chai from "./chai"
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+
+  // return (
+  //   <Chai/>
+  // )
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Chai/>
+      <h1>React</h1>
+      <p>Para</p>
     </>
+    
   )
 }
 
 export default App
+
+//can return only 1 ele in app.jsx
+
+//Why delete html code, coz of jsx as jsx is wrapped in closing tag(jsx expressions must have one parent ele)
+// So, u can return fragment(empty tag)
+/* <> 
+  <h1></h1>
+  <p></p>
+</> */
+
+//BrowserError:-  <chai> is unrecog in this browserto render a React component start its name with an uppercase letter
