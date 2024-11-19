@@ -13,18 +13,25 @@ function MyApp() {
 
 //React convert this above HTML syntax into below obj syn(to form tree)
 
-const ReactElement = {
-    type: 'a',
-    props: {
-        href: 'https://google.com',
-        target: '_blank'
-    },
-    children: 'Click me to visit google'
-}
+// const ReactElement = {
+//     type: 'a',
+//     props: {
+//         href: 'https://google.com',
+//         target: '_blank'
+//     },
+//     children: 'Click me to visit google'
+// }
 
+
+// This time create a/c to react(not us)  use React
+const reactElement = React.createElement(
+    'a',
+    {href: 'https;//google.com', target: '_blank'},
+    'Click me to visit google'
+)
 
 const anotherElement = (
-    <a href= "https://google.com" target = "_blank"></a>
+    <a href= "https://google.com" target = "_blank">Visit google</a>
 )
 
 //Its react render
@@ -36,7 +43,7 @@ render(
     // MyApp
     // ReactElement()    not working
     anotherElement
-  
+    // reactElement
 )
 
 //react create root & in that we pass a doc & render the app & app is a simple func which contain jsx
