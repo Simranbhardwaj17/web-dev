@@ -2,7 +2,9 @@
 import Chai from "./chai"
 
 function App() {
-  
+  //how to inject var in jsx 
+  //to access var use {}
+  const username = "Coder S"
 
   // return (
   //   <Chai/>
@@ -11,7 +13,7 @@ function App() {
   return (
     <>
       <Chai/>
-      <h1>React</h1>
+      <h1>React {username}</h1>      
       <p>Para</p>
     </>
     
@@ -30,3 +32,11 @@ export default App
 </> */
 
 //BrowserError:-  <chai> is unrecog in this browserto render a React component start its name with an uppercase letter
+
+
+//{username}:- called as evaluated exprssion(coz its not whole js only final js)
+// U can't perform evaluation like if, forloop, {if(true) username} inside a return expression 
+//U can perform evaluation inside or outside a function
+
+
+
