@@ -8,7 +8,7 @@ import './App.css'
 
 // function App() {
   
-//   let [counter, setCounter] = useState(15)          //how to use hooks(not use const)    {setCounter can be named as anything}
+//   let [counter, setCounter] = useState(15)          //how to use hooks(can also use const as it is arr)    {setCounter can be named as anything}
 //   // let counter = 15
 
 //   const addValue = () => {
@@ -107,3 +107,6 @@ function App() {
 }
 
 export default App
+
+
+//Have a look at #8 lec(interview que:- concept of useState)
