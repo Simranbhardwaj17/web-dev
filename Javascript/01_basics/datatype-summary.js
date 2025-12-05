@@ -1,5 +1,8 @@
 //l-9
 /*
+
+Depending on how to store into mem and acces data from mem,based on that data r categorized (prim or non-prim)
+
 PRIMITIVE(call by value)
 
 Inka orginal value/ data ka refence nhi diya jata only copy   (value change in copy)                            
@@ -16,7 +19,7 @@ let color = undefined;
 // In symbol if value pass is same then also value of id & anotherId is not same
 const id = Symbol('123')
 const anotherId = Symbol('123')
-console.log(id === anotherId);
+console.log(id === anotherId);  //false
 
 // bigInt use
 const bigNumber = 345678765434567654565n
@@ -55,44 +58,68 @@ let myObj = {
 //-------------- Function  ------------
 // function(){}                   //def of func
 
-// Store func in vari
+// Store func in var
 const myFunction = function(){
     console.log("Simran");
 }
 
-// Use typeof to find DT of vari
+// Use typeof to find DT of var
 console.log(typeof bigNumber);
+console.log(typeof id);
 
+//  DT    return type
+// (Primitive)
 
-// l-10
+// Number        number
+// String        string
+// Boolean       boolean
+// null          object
+// undefined     undefined
+// BigInt        bigint
+// Symbol        symbol
 
-// Stack (Primitive) , Heap (Non-Primitive)
-// If Stack memory use, we get copy of declared vari
-// in heap we get reference value, change in original if do any change
-let state1 = "MP";
+// In JavaScript, ""non-primitive data types"" are all ultimately of the ""object type"" . This includes: 
 
-let state2 = state1;                               //Here copy of state1 given not orig.so, changes r made in copy
-console.log(state2);
+// • Objects: General-purpose collections of key-value pairs. 
+// • Arrays: Ordered lists of values, which are a special type of object. 
+// • Functions: Callable code blocks, also considered a special type of object. 
 
-state2 = "UK";
-console.log(state2);
-console.log(state1);                               //No changes in state1
-console.log(typeof state1);
+// When you use the typeof operator on any of these non-primitive types, the result will be "object", except for functions, which return "function". 
+// Here's an illustration: 
+let myObject = { key: "value" };
+console.log(typeof myObject); // Output: "object"
 
+let myArray = [1, 2, 3];
+console.log(typeof myArray);  // Output: "object"
 
-// NonPrimitive store into heap, from it we get reference of orignal value not copy
-user1 = {
-    contact: 9999999999,
-    email: "abc@gmail.com"
+function myFunction1() {
+  // ...
 }
+console.log(typeof myFunction); // Output: "function"
 
-user2 = {
-    contact: 1111111111,
-    email: "abd@gmail.com"
-}
 
-user1 = user2;
-user2.state = "Uttarakhand";
-console.log(user2);
-console.log(user1);             //due to change in user2, also change in user1
 
+// In JavaScript, "non-primitive data types" are often referred to as reference types because they store a reference 
+// to the value in memory, rather than the actual value itself. The primary non-primitive data types in JavaScript are:
+
+// • Object: The most fundamental non-primitive type. Objects are collections of key-value pairs, 
+// where keys are typically strings (or Symbols) and values can be any data type, including other objects. 
+
+    let person = {
+      name: "Alice",
+      age: 30,
+      isStudent: false
+    };
+
+// • Array: A specialized type of object used to store ordered collections of values. Arrays are indexed numerically, starting from 0.
+
+    let colors = ["red", "green", "blue"];
+
+// • Function: Functions are also a type of object in JavaScript, with the added capability of being callable. They encapsulate reusable blocks of code. 
+
+    function greet(name) {
+      console.log("Hello, " + name + "!");
+    }
+
+// Other non-primitive types, such as Date and RegExp, are also instances of the Object type. The key characteristic distinguishing non-primitive types
+// from primitive types (like String, Number, Boolean, Null, Undefined, BigInt, and Symbol) is their mutability and how they are passed by reference rather than by value. 

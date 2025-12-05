@@ -25,3 +25,5 @@ ex: As a developer changes value of variable it get changed in whole code
 }
 */
 
+// const digit;   err: const must be initialized
+let digit;

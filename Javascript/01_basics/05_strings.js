@@ -10,7 +10,7 @@ console.log(`Number of digit in my name is ${myName.length}`);
    
 
 // 2nd way to declare string
-const herName = new String ('simu' )
+const herName = new String ('simu' )  //pass name into constr
 console.log(herName);                          // O/P:- [String: 'simu'], specially cast into string type object
 console.log(herName[2]);
 console.log(herName.__proto__);                //o/p: get object "{} "  Why empty  
@@ -30,12 +30,21 @@ console.log(herName.charAt(1));
 console.log(herName.indexOf('b'));             //O/P: -1, coz not def
 
 
+let newString = herName.substring(0, 2);   //last is exclude (only +ve)
+console.log(newString);  //si
+
+let sliceStr = herName.slice(-3, 5)  //rev (can take -ve idx value)
+console.log(sliceStr);  //imu
+
+
 const url = "https://SimranBhardwaj17/web-dev/repo.com";
 //functions/method
 console.log(url.replace('web-dev', 'Basic-web'));             //changes done only in copy value not original (coz it is primitive)
-console.log(url);                                         //No change in original url
+console.log(url);             //Why become same url again                             //No change in original url
 console.log(url.includes('Basic'));
 console.log(url.includes('dev'));
+
+console.log(url.split('/'));
 
 
 let yourName = "      Simu     "

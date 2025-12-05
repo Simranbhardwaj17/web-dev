@@ -1,6 +1,14 @@
 //l-12
+
+const score = 400  
+console.log(score);  //automaticallyy def no. type
+
+let score2 = new Number(400)  //specifically def as num type(obj)
+console.log(score2);
+
+
 // Use console to get lot of values & methods of Maths & Number
-const PNR = new Number (19022343 );
+const PNR = new Number(19022343 );
 console.log(PNR);                                   // O/P:- [Number: 19022343], specially cast into Number type object
 // console.log(PNR[0]);                             //not for digit
 console.log(PNR.__proto__);                         //o/p: get object "{} "  Why empty?  

@@ -36,6 +36,22 @@ var score = 33;
 console.log(score);
 console.log(typeof(score));
 
+// #6 
+
+let marks = "33abc";
+console.log(marks);
+console.log(typeof(marks));
+
+let valueInNumber = Number(marks)
+console.log(typeof valueInNumber);
+console.log(valueInNumber);  //NaN (can't converted to num)
+
+/* valueInNumber values
+"33" = 33
+"33abc" = NaN
+true = 1; false = 0
+*/
+
 var score = "33";
 console.log(score);
 console.log(typeof(score));
