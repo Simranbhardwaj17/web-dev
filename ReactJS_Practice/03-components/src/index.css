@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica neue';
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  background-color: pink;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 20px;
+}
+
+.nav {
+  display: flex; /* Makes the container a flex container */
+  justify-content: space-around; /* Distributes space evenly between items */
+  align-items: center; /* Vertically aligns items in the center */
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 3px;
+}
