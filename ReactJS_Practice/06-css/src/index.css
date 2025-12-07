@@ -1,0 +1,12 @@
+/* Here no need to create global css (using index), use modular css, so that only specific ele can use that css prop */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica neue';
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
