@@ -1,0 +1,11 @@
+* {
+  background-color: black;
+  color: aliceblue;
+}
+
+button {
+  background-color: blue;
+  padding: 10px 15px;
+  margin: 10px;
+  border: none;
+}
